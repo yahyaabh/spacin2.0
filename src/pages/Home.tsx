@@ -1,5 +1,6 @@
 import Header from "../components/Header"
 import space from "../assets/space.jpg"
+import bg from "../assets/space3.svg"
 import { CiCircleChevDown } from "react-icons/ci";
 function Home() {
   return (
@@ -13,6 +14,15 @@ function Home() {
           </div>
           <img className="hidden w-2/5 h-2/5 rounded-md md:block md:w-2/5 md:h-2/5 lg:w-1/5 " src={space}></img>
           
+        </div>
+
+        <div id="down-section" style={{backgroundImage :  `url(${bg})`}} className=" flex flex-col justify-center items-center h-full text-white">
+            <h1 className="text-xl font-bold my-4">Our feautures:</h1>
+            <ul className="flex flex-col justify-center items-center">
+                <li className="my-3 border-2 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Image of the day.</li>
+                <li className="my-3 border-2 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Phtos from rovers on mars.</li>
+                <li className="my-3 border-2 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Let ai analyse your picture.</li>
+            </ul>
         </div>
         
     </div>
