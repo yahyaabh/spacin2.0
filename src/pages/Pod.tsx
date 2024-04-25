@@ -27,7 +27,7 @@ const Pod:React.FC = () => {
   return (
     <div className="h-screen">
         <Header></Header>
-        <div className="bg-black  flex flex-col items-center justify-center">
+        <div className="bg-black  flex flex-col items-center justify-center md:mx-4 md:rounded-md lg:mx-6 ">
             <h1 className="text-xl text-purple-light font-bold my-3 lg:text-3xl ">The image of today :</h1>
             <h1 className="text-md text-white font-semibold my-4 lg:text-3xl ">{title}</h1>
             <img className="w-1/2 h-1/2 rounded-md" src={image}></img>
