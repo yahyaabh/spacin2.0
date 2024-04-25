@@ -12,7 +12,7 @@ const Home:React.FC = () => {
   }
   return (
     <div className="h-screen">
-        <Header/>
+        <Header />
         <div className="flex mx-6 justify-center items-center h-3/4 lg-mx-0 lg:justify-evenly ">
           <div className="md:items-between md:w-2/5 lg:text-xl lg:w-1/5 l">
               <h1 className="text-xl font-bold mb-3 lg:text-3xl ">Welcome to <span className="text-purple ">spacin</span></h1>
