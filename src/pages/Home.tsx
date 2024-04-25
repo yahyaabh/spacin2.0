@@ -26,7 +26,7 @@ const Home:React.FC = () => {
         <div ref={scrollBtnRef} id="down-section" style={{backgroundImage :  `url(${bg})`}} className=" flex flex-col justify-center items-center h-full text-white">
             <h1 className="text-xl font-bold my-4">Our feautures:</h1>
             <ul className="flex flex-col justify-center items-center">
-                <Link to="" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm ">Image of the day.</Link>
+                <Link to="/pod" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm ">Image of the day.</Link>
                 <Link to="" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Photos from rovers on mars.</Link>
                 <Link to="" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Let ai analyse your picture.</Link>
             </ul>
