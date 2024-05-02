@@ -27,7 +27,7 @@ const Home:React.FC = () => {
             <h1 className="text-xl font-bold my-4">Our feautures:</h1>
             <ul className="flex flex-col justify-center items-center">
                 <Link to="/pod" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm ">Image of the day.</Link>
-                <Link to="" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Photos from rovers on mars.</Link>
+                <Link to="/rovers" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Photos from rovers on mars.</Link>
                 <Link to="" className="my-3 duration-100 rounded-lg p-2 shadow-white shadow-md hover:shadow-sm">Let ai analyse your picture.</Link>
             </ul>
         </div>
