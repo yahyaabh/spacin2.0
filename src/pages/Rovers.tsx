@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import { RoverForm } from '../components/RoverForm';
+import { RoverManifest } from '../components/RoverManifest';
 const Rovers:React.FC =( )=> {
     //type for the rovers
     type Rover = "curiosity"|"opportunity"|"spirit";
@@ -11,9 +12,10 @@ const Rovers:React.FC =( )=> {
     const [rover,setRover] = useState<Rover>("curiosity");
 
   return (
-    <div className='h-screen'>
+    <div className='h-screen flex justify-start items-center flex-col'>
         <Header></Header>
         <RoverForm setRover={setRover}></RoverForm>
+        <RoverManifest rover={rover}></RoverManifest>
     </div>
   )
 }

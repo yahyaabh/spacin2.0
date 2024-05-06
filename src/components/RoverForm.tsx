@@ -11,7 +11,7 @@ interface Props  {
     setRover : React.Dispatch<React.SetStateAction<Rover>>;
 }
 type formData ={
-    rover: string
+    rover: Rover
 }
 
 export const RoverForm:React.FC<Props> = ({setRover}) => {  
@@ -19,7 +19,7 @@ export const RoverForm:React.FC<Props> = ({setRover}) => {
     const {register,control,handleSubmit} = useForm<formData>();
 
     const onSubmit = (data:formData) => {
-            console.log(data)
+            setRover(data.rover)
     }
 
   return (
@@ -31,7 +31,7 @@ export const RoverForm:React.FC<Props> = ({setRover}) => {
                 <option value="opportunity">opportunity</option>
                 <option value="spirit">spirit</option>
             </select>
-            <button className='border-2 p-2 hover:p-1 m-2 rounded-md border-purple hover:bg-purple hover:text-white duration-200 '>submit</button>
+            <button className='border-2 p-2 hover:p-1 m-2 rounded-md border-purple hover:bg-purple hover:text-white duration-200 '>choose</button>
             
         </form>
         <DevTool control={control}/>

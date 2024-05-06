@@ -3,7 +3,6 @@ import { IoReturnUpBack } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 const Header:React.FC = () => {
   const location = useLocation();
-  console.log(location.pathname)
   return (
     <div className="w-full flex items-center justify-evenly  h-1/4">
         { location.pathname != '/' && 
