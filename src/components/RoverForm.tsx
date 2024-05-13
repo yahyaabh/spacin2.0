@@ -25,16 +25,16 @@ export const RoverForm:React.FC<Props> = ({setRover}) => {
   return (
     <>
         <form onSubmit={handleSubmit(onSubmit)} className='w-screen flex flex-col justify-center items-center'>
-            <h1 className='p-2 font-bold text-md'>choose a rover:</h1>
+            <h1 className='p-2 font-bold text-lg text-purple'>choose a rover:</h1>
             <select  {...register("rover")} className='w-2/5 bg-white text-black border border-black rounded-sm text-center md:w-1/4' >
                 <option  value="curiosity">curiosity</option>
                 <option value="opportunity">opportunity</option>
                 <option value="spirit">spirit</option>
             </select>
-            <button className='border-2 p-2 hover:p-1 m-2 rounded-md border-purple hover:bg-purple hover:text-white duration-200 '>choose</button>
+            <button className='border-2 p-2 hover:p-1 m-2 rounded-md border-purple bg-purple text-white hover:bg-white hover:text-purple duration-200 '>choose</button>
             
         </form>
         <DevTool control={control}/>
-    </>
+        </>
   )
 }

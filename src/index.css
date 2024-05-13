@@ -16,3 +16,9 @@
 }
 
 
+input[type="date"] { 
+  background: #4c1c46;
+  color: white;
+  padding: 2px;
+  border-radius: 7px;
+}
