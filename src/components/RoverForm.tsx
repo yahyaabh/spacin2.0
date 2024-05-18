@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {DevTool} from "@hookform/devtools"
 import {useForm} from "react-hook-form"
 
@@ -22,6 +22,8 @@ export const RoverForm:React.FC<Props> = ({setRover}) => {
             setRover(data.rover)
     }
 
+    
+
   return (
     <>
         <form onSubmit={handleSubmit(onSubmit)} className='w-screen flex flex-col justify-center items-center'>
@@ -31,7 +33,7 @@ export const RoverForm:React.FC<Props> = ({setRover}) => {
                 <option value="opportunity">opportunity</option>
                 <option value="spirit">spirit</option>
             </select>
-            <button className='border-2 p-2 hover:p-1 m-2 rounded-md border-purple bg-purple text-white hover:bg-white hover:text-purple duration-200 '>choose</button>
+            <button className='border-2 p-2 hover:p-1 hover:m-3 m-2 rounded-md border-purple bg-purple text-white hover:bg-white hover:text-purple duration-200 '>choose</button>
             
         </form>
         <DevTool control={control}/>

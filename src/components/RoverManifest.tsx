@@ -28,7 +28,7 @@ export const RoverManifest:React.FC<props> = ({rover,land,max,setLand,setMax}) =
     }
         ,[rover])
   return (
-    <div className='mt-10 flex flex-col justify-center rounded-md items-center bg-black text-white w-2/4'>
+    <div className='mt-10 flex flex-col justify-center rounded-md items-center bg-black text-white w-3/4 md:w-2/4'>
         <h1 className='font-bold  text-xl my-2 text-purple-light'>{rover}</h1>
         <p className='text-center'>It was launched at <span className='font-semibold'>{launch}</span> and it landed on Mars at <span className='font-semibold'>{land}</span> and the last day it took a photo was <span className='font-semibold'>{max}</span>.</p>
     </div>
