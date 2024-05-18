@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import { RoverForm } from '../components/RoverForm';
 import { RoverManifest } from '../components/RoverManifest';
 import {RoverImages} from "../components/RoverImages";
+import { RoverDisplay } from '../components/RoverDisplay';
 
 const Rovers:React.FC =( )=> {
     //type for the rovers
@@ -18,6 +19,7 @@ const Rovers:React.FC =( )=> {
     //for having the dates
     const [land,setLand] = useState('');
     const [max,setMax]  = useState('');
+    const [date,setDate] = useState('');
     //console.log(cams)
 
   return (
@@ -25,7 +27,8 @@ const Rovers:React.FC =( )=> {
         <Header></Header>
         <RoverForm setRover={setRover}></RoverForm>
         <RoverManifest land={land} max={max} setLand={setLand} setMax={setMax} rover={rover}></RoverManifest>
-        <RoverImages rover={rover} setCams={setCams} land={land} max={max}></RoverImages>
+        <RoverImages setDate={setDate} date={date} rover={rover} setCams={setCams} land={land} max={max}></RoverImages>
+        <RoverDisplay date={date} cams={cams} rover={rover}></RoverDisplay>
     </div>
   )
 }

@@ -7,16 +7,18 @@ interface props {
     land:string,
     max:string,
     setCams: React.Dispatch<React.SetStateAction<never[]>>,
-    rover:Rover
+    rover:Rover,
+    setDate:React.Dispatch<React.SetStateAction<string>>,
+    date :string
 }
 
 type formData = {
     date:string
 }
 
-export const RoverImages:React.FC<props>= ({land,max,setCams,rover}) => {
+export const RoverImages:React.FC<props>= ({land,max,setCams,rover,setDate,date}) => {
 
-    const [date,setDate]= useState("")
+    // const [date,setDate]= useState("")
 
     const {register,handleSubmit} = useForm<formData>();
 
@@ -35,7 +37,7 @@ export const RoverImages:React.FC<props>= ({land,max,setCams,rover}) => {
 
   return (
     <>
-        <form className='mt-10 flex flex-col justify-center rounded-md items-center bg-black text-white w-3/4 md:w-2/4' onSubmit={handleSubmit(onSubmit)}>
+        <form  className='mt-10 flex flex-col justify-center rounded-md items-center bg-white text-black border border-black p-4 w-3/4 md:w-2/4' onSubmit={handleSubmit(onSubmit)}>
             <p className='my-4  font-semibold md:text-lg text-center'>choose a date between {land} and {max}:</p>
             <input className='my-4 hover:p-1  duration-200' {...register("date")} max={max} min={land} type='date'></input>
             <button className='border-2 p-2 hover:p-1 hover:m-3 m-2 rounded-md onhover:border-purple bg-purple text-white hover:bg-white hover:text-purple duration-200 '>submit</button>
