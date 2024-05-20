@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useForm} from "react-hook-form";
+import { toast } from 'react-toastify';
 
 type Rover = "curiosity"|"opportunity"|"spirit";
 
@@ -31,8 +32,13 @@ export const RoverImages:React.FC<props>= ({land,max,setCams,rover,setDate,date}
         const filtered = await datas.photo_manifest.photos.filter((day: { earth_date: string; }) => {
             return day.earth_date == date.toString();
         });
-        //console.log(filtered[0].cameras);
+        
+        if(filtered.length ==0) {
+            toast.error("Please choose another date!!")
+        }
+        else {
         setCams(filtered[0].cameras);
+        }
     }
 
   return (

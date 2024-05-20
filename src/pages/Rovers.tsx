@@ -23,7 +23,7 @@ const Rovers:React.FC =( )=> {
     //console.log(cams)
 
   return (
-    <div className='h-screen flex justify-start items-center flex-col'>
+    <div className='h-screen overflow-x-hidden w-screen flex justify-start items-center flex-col'>
         <Header></Header>
         <RoverForm setRover={setRover}></RoverForm>
         <RoverManifest land={land} max={max} setLand={setLand} setMax={setMax} rover={rover}></RoverManifest>

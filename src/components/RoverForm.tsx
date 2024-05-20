@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import {DevTool} from "@hookform/devtools"
 import {useForm} from "react-hook-form"
 
 //here we define the type for rovers again
@@ -36,7 +35,7 @@ export const RoverForm:React.FC<Props> = ({setRover}) => {
             <button className='border-2 p-2 hover:p-1 hover:m-3 m-2 rounded-md border-purple bg-purple text-white hover:bg-white hover:text-purple duration-200 '>choose</button>
             
         </form>
-        <DevTool control={control}/>
+        
         </>
   )
 }

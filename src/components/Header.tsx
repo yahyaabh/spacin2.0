@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header:React.FC = () => {
   const location = useLocation();
   return (
-    <div className="w-full flex items-center justify-evenly  h-1/4">
+    <div className="w-screen flex items-center justify-evenly  h-1/4">
         { location.pathname != '/' && 
            ( <Link className=' border-2 p-2 hover:p-1 hover:m-3 rounded-md border-purple hover:bg-purple hover:text-white duration-100  ' to="../"><IoReturnUpBack /></Link>) 
         }
