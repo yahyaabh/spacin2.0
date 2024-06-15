@@ -11,7 +11,7 @@ const Home:React.FC = () => {
       scrollBtnRef.current?.scrollIntoView({behavior: 'smooth'});
   }
   return (
-    <div className="h-screen">
+    <div className="h-screen overflow-x-hidden">
         <Header />
         <div className="flex mx-6 justify-center items-center h-3/4 lg-mx-0 lg:justify-evenly ">
           <div className="md:items-between md:w-2/5 lg:text-xl lg:w-1/5 l">

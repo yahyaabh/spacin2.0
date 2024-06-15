@@ -6,7 +6,7 @@ import { BrowserRouter as Router ,Routes,Route} from 'react-router-dom';
 import Home from "./pages/Home"
 import Pod from "./pages/Pod"
 import Rovers from "./pages/Rovers";
-
+import  Analysis  from './pages/Analysis';
 function App() {
 
   return (
@@ -17,6 +17,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/pod' element={<Pod/>} />
             <Route path='/rovers' element={<Rovers/>}/>
+            <Route path='/imageai' element={<Analysis/>} />
         </Routes>
     </Router>
   )

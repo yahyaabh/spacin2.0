@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+//for getting each rover's landing date and launching date and different info 
+
+
 interface props {
     rover : Rover,
     land: string,

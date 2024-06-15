@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import {useForm} from "react-hook-form";
 import { toast } from 'react-toastify';
 
@@ -20,19 +20,44 @@ type formData = {
 export const RoverImages:React.FC<props>= ({land,max,setCams,rover,setDate,date}) => {
 
     // const [date,setDate]= useState("")
-
+    
     const {register,handleSubmit} = useForm<formData>();
 
-    const onSubmit = async(data:formData) => {
+    const onSubmit = async (data:formData) => {
         setDate(data.date);
+        //.toString()
+        
+
         //make a request to manifest and get filter to get the cameras first
+        // const res = await fetch(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${import.meta.env.VITE_SECRET_KEY}`, {method: "GET"});
+        // const datas = await res.json();
+
+        
+        // const stringDate =  date.toString();
+        // console.log(date);
+        // const filtered = await datas.photo_manifest.photos.filter(async(day: { earth_date: string; }) => {
+        //     return day.earth_date == date;
+        // });
+        
+
+        // if(filtered.length ==0) {
+        //     toast.error("Please choose another date!!")
+        // }
+        // else {
+        // setCams(filtered[0].cameras);
+        // }
+    }
+
+    const fetchImage = async() => {
+    
         const res = await fetch(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${import.meta.env.VITE_SECRET_KEY}`, {method: "GET"});
         const datas = await res.json();
-        //console.log(date.toString());
-        const filtered = await datas.photo_manifest.photos.filter((day: { earth_date: string; }) => {
-            return day.earth_date == date.toString();
+
+        const filtered = await datas.photo_manifest.photos.filter(async(day: { earth_date: string; }) => {
+            return day.earth_date == date;
         });
         
+
         if(filtered.length ==0) {
             toast.error("Please choose another date!!")
         }
@@ -40,6 +65,10 @@ export const RoverImages:React.FC<props>= ({land,max,setCams,rover,setDate,date}
         setCams(filtered[0].cameras);
         }
     }
+
+    useEffect(() => {
+        fetchImage();
+    },[date])
 
   return (
     <>

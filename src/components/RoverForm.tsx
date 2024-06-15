@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form"
 
 //here we define the type for rovers again
@@ -15,7 +15,7 @@ type formData ={
 
 export const RoverForm:React.FC<Props> = ({setRover}) => {  
 
-    const {register,control,handleSubmit} = useForm<formData>();
+    const {register,handleSubmit} = useForm<formData>();
 
     const onSubmit = (data:formData) => {
             setRover(data.rover)
