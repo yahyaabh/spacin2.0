@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useForm} from "react-hook-form";
+import ImageAi from './ImageAi';
 
 type Rover = "curiosity"|"opportunity"|"spirit";
 
@@ -37,6 +38,7 @@ export const RoverDisplay:React.FC<props> = ({cams,rover,date}) => {
            // console.log(datas.photos[0].img_src);
            if(datas.photos[0]) {
             setPic(datas.photos[0].img_src);
+            localStorage.setItem('pic', JSON.stringify(datas.photos[0].img_src));
            }
            
     }
@@ -61,8 +63,12 @@ export const RoverDisplay:React.FC<props> = ({cams,rover,date}) => {
             <button className='border-2 p-2 hover:p-1 hover:m-3 m-2 rounded-md border-purple bg-purple text-white hover:bg-white hover:text-purple duration-200 '>choose</button>
         </form>
 
-          {pic?      
-        <img  className="w-1/4 h-2/4 rounded-md mb-10 text-red-600 font-semibold" src={pic} alt="please choose another one the browser cannot open this one."></img>
+          {pic?     
+          <div className=' w-2/4 flex  justify-center items-center flex-col'> 
+                <img  className="  rounded-md mb-10 text-red-600 font-semibold" src={pic} alt="please choose another one the browser cannot open this one."></img>
+                <ImageAi pic={pic}></ImageAi>
+         
+         </div>
         :<p className=' text-red-600 font-semibold'>Sorry there's no photos at this day </p> }
         </>
         }
