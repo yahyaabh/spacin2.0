@@ -1,14 +1,16 @@
 import React from 'react';
 import {useForm} from "react-hook-form"
 
-//here we define the type for rovers again
-// and for the setRover function since it is not defined here
-//wee need to manipulate the setStateAction<string> --> setStateAction<Rover>
+//rover type
+type Rover = "curiosity"|"opportunity"|"spirit"|"";
 
-type Rover = "curiosity"|"opportunity"|"spirit";
+
 interface Props  {
+    //setStateAction<string> --> setStateAction<Rover> 
     setRover : React.Dispatch<React.SetStateAction<Rover>>;
 }
+
+//for the form
 type formData ={
     rover: Rover
 }
@@ -16,7 +18,6 @@ type formData ={
 export const RoverForm:React.FC<Props> = ({setRover}) => {  
 
     const {register,handleSubmit} = useForm<formData>();
-
     const onSubmit = (data:formData) => {
             setRover(data.rover)
     }

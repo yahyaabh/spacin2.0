@@ -7,11 +7,11 @@ import { RoverDisplay } from '../components/RoverDisplay';
 
 const Rovers:React.FC =( )=> {
     //type for the rovers
-    type Rover = "curiosity"|"opportunity"|"spirit";
+    type Rover = "curiosity"|"opportunity"|"spirit"|"";
 
     //the state that indicates the current rover the user choses
     //the state can be one of the three options i declared above while creating the type
-    const [rover,setRover] = useState<Rover>("curiosity");
+    const [rover,setRover] = useState<Rover>("");
 
     //state for storing the cameras that are available on the specified day by the user
     const [cams, setCams] = useState([])
