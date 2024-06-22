@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
       'process.env.REACT_APP_SECRET_KEY': JSON.stringify(env.REACT_APP_SECRET_KEY),
     },
     plugins: [react()],
-    base: '/spacin2.0/',
+    base: '/',
     
   }
 })
