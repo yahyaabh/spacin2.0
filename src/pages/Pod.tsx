@@ -41,8 +41,8 @@ const Pod:React.FC = () => {
              
                 <h1 className="text-xl text-purple-light font-bold my-3 lg:text-3xl ">The image of today :</h1>
                 <h1 className="text-md text-white font-semibold my-4 lg:text-3xl ">{title}</h1>
-                {/* <div className="w-1/2 h-1/2 rounded-md" src={image}></div> */}
-                < div style={{backgroundImage: `url(${image})`}} className="w-64 h-64 bg-custom-bg bg-cover bg-center bg-no-repeat"></div>
+                <img className="w-1/2 h-1/2 rounded-md" src={image}></img>
+                {/* < div style={{backgroundImage: `url(${image})`}} className="w-64 h-64 bg-custom-bg bg-cover bg-center bg-no-repeat"></div> */}
                 <p className="text-white text-sm">{date} </p>
                 <p className="text-white m-6 text-center">{text}</p>
               
